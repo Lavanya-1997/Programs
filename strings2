@@ -1,0 +1,23 @@
+'''
+Sample Input
+
+ABCDCDC
+CDC
+Sample Output
+
+2
+'''
+
+def count_substring(string, sub_string):
+    occurence = 0
+    for x in range(len(string)) :
+        if string.find(sub_string,x,x+len(sub_string)) != -1 :
+            occurence=occurence+1
+    return occurence
+
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
