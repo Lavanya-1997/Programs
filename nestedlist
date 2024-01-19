@@ -1,0 +1,23 @@
+'''Example
+
+The ordered list of scores is , so the second lowest score is . There are two students with that score: . Ordered alphabetically, the names are printed as:
+
+alpha
+beta'''
+
+if __name__ == '__main__':
+  total_students = int(input())
+  students_detail = []
+  student_score = []
+  for index in range(total_students):
+      name = input()
+      score = float(input())
+      students_detail.append([name, score])
+      student_score.append(score)
+      if index+1 == total_students:
+        students_detail.sort()
+        student_score = list(set(student_score))
+        student_score.remove(min(student_score))
+        for student in students_detail:
+          if student[1] == min(student_score):
+            print(student[0])
